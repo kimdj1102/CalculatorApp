@@ -34,7 +34,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func deleteBtnPressed(_ sender: UIButton) {
-        numberLabel.text?.removeLast()
+        guard let label = numberLabel.text else { return }
+        
+        numberLabel.text = textManager.removeText(label)
     }
-    
 }
